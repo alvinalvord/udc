@@ -1,0 +1,25 @@
+notes for udc:
+    doctors:
+        -> recurring date (bool flags in db -> r/!r)
+        -> allow sched modification
+        -> day and week in calendar form view 
+            (i.e. weekly view?) (mukhang animo sys lol)
+        -> day and week in agenda view
+            (prolly vbox[7] with labels)
+        -> real time (timer task -> controller sends update flags)
+        -> no overlaps (dc2) and see free and reserved (dc2)
+
+    secretary:
+        -> access to doctors view
+        -> set schedule
+        -> notifs when almost event?
+        -> get free times of doctors
+        -> set color for schedule
+        -> realtime (timer task again)
+    
+    client:
+        -> access to doctors view
+        -> set appointment
+        -> cancel own appointments
+        -> see reservations 
+            (select * from appointments where id = client_id?)
