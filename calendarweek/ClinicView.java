@@ -35,6 +35,7 @@ public abstract class ClinicView extends BorderPane implements View {
 						protected ToggleButton week;
 						protected ToggleButton day;
 			protected CalendarDayScroller calendarDayScroller;
+			protected CalendarWeekScroller calendarWeekScroller;
 			protected AgendaDayScroller agendaDayScroller;
 			protected CreateBox createBox;
 	
@@ -140,6 +141,7 @@ public abstract class ClinicView extends BorderPane implements View {
 		initRightPaneUpperHBox ();
 		
 		calendarDayScroller = new CalendarDayScroller (cvc, gcm);
+		calendarWeekScroller = new CalendarWeekScroller (cvc, gcm);
 		agendaDayScroller = new AgendaDayScroller (cvc, gcm);
 		createBox = new CreateBox (cvc, gcm);
 		
@@ -186,9 +188,10 @@ public abstract class ClinicView extends BorderPane implements View {
 				lowerHbox.getChildren ().addAll (leftVbox, rightPane);
 			}
 			
-			// if (day.isSelected ())
+			if (day.isSelected ())
 				rightPane.setCenter (calendarDayScroller);
-			// else
+			else if (week.isSelected ())
+				rightPane.setCenter (calendarWeekScroller);
 				
 			update ();
 		});
@@ -218,10 +221,28 @@ public abstract class ClinicView extends BorderPane implements View {
 		
 		day.setOnAction (e -> {
 			day.setSelected (true);
+			
+			if (!lowerHbox.getChildren ().contains(rightPane)) {
+				lowerHbox.getChildren ().removeAll (lowerHbox.getChildren ());
+				lowerHbox.getChildren ().addAll (leftVbox, rightPane);
+			}
+			
+			if (calendar.isSelected ())
+				rightPane.setCenter (calendarDayScroller);
+			else if (agenda.isSelected ())
+				rightPane.setCenter (agendaDayScroller);
 		});
 		
 		week.setOnAction (e -> {
 			week.setSelected (true);
+			
+			if (!lowerHbox.getChildren ().contains(rightPane)) {
+				lowerHbox.getChildren ().removeAll (lowerHbox.getChildren ());
+				lowerHbox.getChildren ().addAll (leftVbox, rightPane);
+			}
+			
+			if (calendar.isSelected ())
+				rightPane.setCenter (calendarWeekScroller);
 		});
 		
 		cvc.getMainStage ().setFullScreenExitHint ("M E M E S");
