@@ -1,0 +1,303 @@
+#DefaultLabel {
+	-fx-font-size: 20px;
+	-fx-font-family: Arial;
+	-fx-font-weight: bold;
+}
+
+#NormalLabel {
+	-fx-font-size: 20px;
+	-fx-font-family: Arial;
+	-fx-font-weight: normal;
+}
+
+/* upper hbox */
+#UpperHbox {
+	-fx-border-color: black; 
+	-fx-background-color: #FFFFFF;
+	-fx-padding: 20;
+	-fx-spacing: 107;
+	-fx-alignment: center;
+}
+
+	/* today button */
+	.Today {
+		-fx-font-size: 20px;
+		-fx-font-family: Arial;
+		-fx-font-weight: bold;
+		-fx-text-fill: black;
+		-fx-background-color: #FFFFFF;
+		-fx-border-color: #000000;
+		-fx-border-width: 2;
+		-fx-cursor: hand;
+	}
+
+	.Today:hover {
+		-fx-background-color: #CFE2F3;
+	}
+
+	/* agenda / day toggle button */
+	.ToggleButton {
+		-fx-font-size: 20px;
+		-fx-padding: 10px 25px 10px 25px;
+		-fx-font-family: Arial;
+		-fx-font-weight: bold;
+		-fx-background-color: #FFFFFF;
+		-fx-border-color: #000000;
+		-fx-border-width: 1;
+		-fx-cursor: hand;
+	}
+
+	.ToggleButton:selected {
+		-fx-background-color: #CFE2F3;
+	}
+/* end of upper hbox */
+
+/* lower hbox */
+#lowerHbox {
+	-fx-border-color: black; 
+	-fx-background-color: #FFFFFF;
+	-fx-padding: 20;
+	-fx-spacing: 30;
+	-fx-alignment: center-left;
+}
+
+
+/* left vbox */
+#leftVbox {
+	-fx-border-color: black;
+	-fx-background-color: white;
+	-fx-padding: 20;
+	-fx-spacing: 30;
+	-fx-alignment: top-left;
+}
+
+	/* create button */
+	.ButtonCreate {
+		-fx-font-size: 20px;
+		-fx-padding: 15px 25px 15px 25px;
+		-fx-font-family: Arial;
+		-fx-font-weight: bold;
+		-fx-background-color: #CC0001;
+		-fx-text-fill: #FFFFFF;
+		-fx-cursor: hand;
+	}
+
+	.ButtonCreate:disabled {
+		-fx-background-color: #FFFFFF;
+		-fx-border-color: #000000;
+		-fx-border-width: 1;
+		-fx-text-fill: #888888;
+		-fx-opacity: 1.0;
+		-fx-cursor: not-allowed;
+	}
+
+	/* checkbox */
+	.CheckBox {
+		-fx-font-size: 20px;
+		-fx-font-family: Arial;
+		-fx-font-weight: normal;
+		-fx-cursor: hand;
+	}
+
+	/* calendar grid */
+	#CalendarLabel {
+		-fx-text-fill: #000000;
+		-fx-font-size: 18px;
+		-fx-font-family: Arial;
+		-fx-font-weight: normal;
+	}
+
+	.CalendarDates {
+		-fx-text-fill: #000000;
+		-fx-font-size: 18px;
+		-fx-font-family: Arial;
+		-fx-font-weight: bold;
+		-fx-background-color: transparent;
+		-fx-border: 1;
+		-fx-border-color: transparent;
+		-fx-box-shadow: none;
+		-fx-border-radius: 0px;
+		-fx-padding: 5px;
+	}
+
+	.CalendarDates:selected {
+		-fx-background-color: #CCCCCC;
+		-fx-border: 1;
+		-fx-border-color: #000000;
+	}
+
+	.CalendarArrows {
+		-fx-border: 0;
+		-fx-box-shadow: none;
+		-fx-background-color: transparent;
+		-fx-border-radius: 0px;
+		-fx-text-fill: #888888;
+		-fx-padding: 2px 5px 2px 5px;
+		-fx-font-size: 15px;
+		-fx-font-family: Arial;
+		-fx-font-weight: bold;
+		-fx-cursor: hand;
+		-fx-focus-color: transparent;
+		-fx-faint-focus-color: transparent;
+	}
+
+	/* event hbox */
+	#checkboxHbox {
+		-fx-spacing: 20;
+		-fx-alignment: bottom-left;
+		-fx-font-size: 20px;
+		-fx-font-family: Arial;
+		-fx-font-weight: bold;
+	}
+	
+/* end of left vbox */
+
+/* create box */
+#createBox {
+	-fx-border-color: black;
+	-fx-padding: 20;
+	-fx-spacing: 30;
+}
+
+	#DateVBox {
+		-fx-font-size: 20px;
+		-fx-font-family: Arial;
+		-fx-font-weight: bold;
+		-fx-background-color: #FFFFFF;
+		-fx-border-color: #000000;
+		-fx-padding: 0 20 0 20;
+		-fx-alignment: center;
+	}
+	
+	#TextField {
+		-fx-font-size: 20px;
+		-fx-font-family: Arial;
+		-fx-font-weight: normal;
+		-fx-background-color: #FFFFFF;
+		-fx-border-color: #000000;
+	}
+
+	#ComboBox {
+		-fx-font-size: 20px;
+		-fx-font-family: Arial;
+		-fx-font-weight: normal;
+		-fx-background-color: #FFFFFF;
+		-fx-border-color: #000000;
+	}
+
+	.CheckBox {
+		-fx-font-size: 20px;
+		-fx-font-family: Arial;
+		-fx-font-weight: normal;
+		-fx-cursor: hand;
+	}
+	
+	/* save button */
+	.ButtonSave {
+		-fx-font-size: 20px;
+		-fx-padding: 15px 25px 15px 25px;
+		-fx-font-family: Arial;
+		-fx-font-weight: bold;
+		-fx-background-color: #CC0001;
+		-fx-text-fill: #FFFFFF;
+		-fx-cursor: hand;
+	}
+
+	/* discard button */
+	.ButtonDiscard {
+		-fx-font-size: 20px;
+		-fx-padding: 15px 25px 15px 25px;
+		-fx-font-family: Arial;
+		-fx-font-weight: bold;
+		-fx-background-color: #FFFFFF;
+		-fx-text-fill: #000000;
+		-fx-border-color: #000000;
+		-fx-cursor: hand;
+	}
+/* end of create box */
+
+/* agendas scroller */
+#agendaScroller {
+	-fx-border-color: transparent;
+	-fx-background-color: #FFFFFF;
+}
+
+/* end of agendas scroller */
+
+/* day scroller */
+#dayScroller {
+	-fx-border-color: white;
+	-fx-background-color: #FFFFFF;
+}
+	
+	#hourLabels {
+		-fx-padding: 10 10 0 0;
+		-fx-border-color: #000000;
+		-fx-alignment: top-right;
+		-fx-font-size: 20px;
+		-fx-font-family: Arial;
+		-fx-font-weight: bold;
+	}
+
+	#TimeLabels {
+		-fx-background-color: #FFFFFF;
+		-fx-border-color: #000000;
+	}
+
+	#TaskLabels {
+		-fx-background-color: #37761D;
+		-fx-text-fill: #FFFFFF; 
+		-fx-font-size: 20px; 
+		-fx-font-family: Arial;
+		-fx-font-weight: bold;
+		-fx-border-color: transparent #000000 transparent #000000;
+		-fx-padding:  10 0 0 30;
+	}
+	
+	#EventLabels {
+		-fx-background-color: #1055CC;
+		-fx-text-fill: #FFFFFF; 
+		-fx-font-size: 20px; 
+		-fx-font-family: Arial;
+		-fx-font-weight: bold;
+		-fx-border-color: transparent #000000 transparent #000000;
+		-fx-padding: 10 0 0 30;
+	}
+	
+	#DoneLabel {
+		-fx-background-color: #FF0000;
+		-fx-text-fill: #FFFFFF; 
+		-fx-font-size: 20px; 
+		-fx-font-family: Arial;
+		-fx-font-weight: bold;
+		-fx-border-color: transparent #000000 transparent #000000;
+		-fx-padding: 10 0 0 30;
+	}
+	
+/* scrollpane scrollbar */
+.scroll-bar,
+.scroll-bar:vertical,
+.scroll-bar:vertical .track {
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+	-fx-background-radius: 0px;
+	-fx-border-radius: 0px;
+}
+
+.scroll-bar:vertical .thumb {
+	-fx-background-color: #555555;
+	-fx-background-radius: 0px;
+}
+
+.scroll-bar:vertical .decrement-button,
+.scroll-bar:vertical .increment-button {
+	-fx-background-color: transparent;
+	-fx-background-radius: 0px;
+	-fx-padding: 0 20 0 0;
+}
+
+.scroll-bar .decrement-arrow,
+.scroll-bar .increment-arrow {
+	-fx-shape: " ";
+	-fx-padding: 0;
+}
