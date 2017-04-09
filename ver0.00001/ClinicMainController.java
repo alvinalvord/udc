@@ -1,28 +1,32 @@
 import javafx.stage.*;
 
-public class GregorianMainController extends MainController {
+public class ClinicMainController extends MainController {
 	
-	private GregorianCalendarController gcc;
+	private ClinicViewController cvc;
 	private LogInController lic;
 	
-	public GregorianMainController (Stage stage) {
+	public ClinicMainController (Stage stage) {
 		super (stage);
+		mainStage.setTitle ("Ultimate Design Challenge");
+		scene.getStylesheets ().add ("./StyleSheet.css");
 	}
 	
 	protected void initControllers () {
 		lic = new LogInController (this);
-		gcc = new GregorianCalendarController (this);
+		cvc = new ClinicViewController (this);
 	}
 	
-	public void setScene (int n){
+	public void setScene (int n) {
 		switch (n) {
 			case 0:
 			case 1:
 				currentView = n;
 				break;
+				
 			default:
 				currentView = 0;
 		}
+		
 		changeView ();
 	}
 	
@@ -33,8 +37,9 @@ public class GregorianMainController extends MainController {
 				break;
 				
 			case 1:
-				scene.setRoot (gcc.getView ());
-			
+				scene.setRoot (cvc.getView ());
+				break;
+				
 			default:
 				scene.setRoot (lic.getView ());
 		}
