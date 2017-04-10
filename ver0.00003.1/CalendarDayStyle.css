@@ -1,0 +1,61 @@
+.CalendarDayScroller {
+	-fx-padding: 0px;
+	-fx-alignment: center;
+	-fx-background-color: transparent;
+}
+
+.CalendarDayScroller > .viewport {
+	-fx-background-color: transparent;
+}
+
+.CalendarDayScroller > .scroll-bar,
+.CalendarDayScroller > .scroll-bar:vertical,
+.CalendarDayScroller > .scroll-bar:horizontal,
+.CalendarDayScroller > .scroll-bar:vertical .track,
+.CalendarDayScroller > .scroll-bar:horizontal .track {
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+	-fx-background-radius: 0px;
+	-fx-border-radius: 0px;
+}
+
+.CalendarDayScroller > .scroll-bar:vertical .thumb,
+.CalendarDayScroller > .scroll-bar:horizontal .thumb {
+	-fx-background-color: #5C6BC0;
+	-fx-background-radius: 0px;
+}
+
+.CalendarDayScroller > .scroll-bar:vertical .decrement-button,
+.CalendarDayScroller > .scroll-bar:vertical .increment-button {
+	-fx-background-color: transparent;
+	-fx-background-radius: 0px;
+	-fx-padding: 0 20 0 0;
+}
+
+.CalendarDayScroller > .scroll-bar:horizontal .decrement-button,
+.CalendarDayScroller > .scroll-bar:horizontal .increment-button {
+	-fx-background-color: transparent;
+	-fx-background-radius: 0px;
+	-fx-padding: 20 0 0 0;
+}
+
+.CalendarDayScroller > .scroll-bar:vertical .thumb:hover,
+.CalendarDayScroller > .scroll-bar:horizontal .thumb:hover {
+	-fx-background-color: #3949AB;
+}
+
+.CalendarDayScroller > .scroll-bar:vertical .thumb:pressed,
+.CalendarDayScroller > .scroll-bar:horizontal .thumb:pressed {
+	-fx-background-color: #283593;
+}
+
+
+.CalendarDayScroller > .scroll-bar .decrement-arrow,
+.CalendarDayScroller > .scroll-bar .increment-arrow {
+	-fx-shape: " ";
+	-fx-padding: 0;
+}
+
+.CalendarDayScroller > .corner {
+	-fx-background-color: transparent;
+}
