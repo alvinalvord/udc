@@ -44,12 +44,12 @@
 	.Today:hover {
 		-fx-background-color: #FFEE58;
 	}
-	
+
 	.Today:pressed {
 		-fx-background-color: #FFF59D;
 		-fx-effect: dropshadow(three-pass-box, transparent, 4, 0, 0, 2);
 	}
-
+	
 	/* agenda / day toggle button */
 	.ToggleButton {
 		-fx-font-size: 20px;
@@ -121,7 +121,7 @@
 		-fx-cursor: not-allowed;
 		-fx-effect: dropshadow(three-pass-box, transparent, 0, 0, 0, 0);
 	}
-	
+
 	.ButtonCreate:hover {
 		-fx-background-color: #3949AB;
 	}
@@ -130,7 +130,7 @@
 		-fx-background-color: #5C6BC0;
 		-fx-effect: dropshadow(three-pass-box, transparent, 0, 0, 0, 0);
 	}
-
+	
 	/* checkbox */
 	.CheckBox {
 		-fx-font-size: 20px;
@@ -255,7 +255,7 @@
 		-fx-background-color: #5C6BC0;
 		-fx-effect: dropshadow(three-pass-box, transparent, 0, 0, 0, 0);
 	}
-
+	
 	/* discard button */
 	.ButtonDiscard {
 		-fx-font-size: 20px;
