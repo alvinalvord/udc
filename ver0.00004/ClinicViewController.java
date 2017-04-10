@@ -40,14 +40,6 @@ public class ClinicViewController implements DatabaseControl {
 		});
 	}
 	
-	public void setUserId (int id) {
-		userID = id;
-	}
-	
-	public int getUserId () {
-		return userID;
-	}
-	
 	public ClinicView getView () {
 		return dv;
 	}
