@@ -1,28 +1,26 @@
 import javafx.geometry.*;
 import javafx.scene.*;
 import javafx.scene.control.*;
+import javafx.scene.effect.*;
 import javafx.scene.input.*;
 import javafx.scene.layout.*;
+import javafx.scene.text.*;
+import javafx.scene.image.*;
 import javafx.stage.*;
+import java.util.*;
 import java.sql.*;
-import java.util.ArrayList;
 
-public class CalendarWeekScroller extends BorderPane implements View {
+public class CalendarDayScroller extends ScrollPane implements View {
 	
 	private DatabaseControl dbc;
 	private CalendarModel cm;
 	
-	private ScrollPane weekScrollPane;
-		private HBox dayHbox;
-			private Label[] dayLabels;
-	private ScrollPane hourScrollPane;
-		private VBox hourVbox;
+	private VBox dayVBox;
+		private HBox[] hboxArr;
 			private Label[] hourLabels;
-	private ScrollPane timeScrollPane;
-		private HBox timeHbox;
-			private VBox[] timeVbox;
-				private Label[][] timeLabels;
-				
+			private VBox[] vboxArr;
+				private Label[] timeLabels;
+	
 	private int[] ids;
 	private Stage popup;
 	private VBox popupVbox;
@@ -35,99 +33,75 @@ public class CalendarWeekScroller extends BorderPane implements View {
 		private HBox popupButtonHBox;
 			private Button save;
 			private Button discard;
-		
-	public CalendarWeekScroller (DatabaseControl dbc, CalendarModel cm) {
+	
+	public CalendarDayScroller (DatabaseControl dbc, CalendarModel cm) {
 		super ();
-		setId ("CalendarWeekScrollerBorderPane");
 		
 		this.dbc = dbc;
-		this.cm = cm;
+		this. cm = cm;
 		
 		cm.attach (this);
 		
-		initCWS ();
+		initCDS ();
 	}
 	
-	private void initCWS () {
-		initWeek ();
-		initHours ();
-		initTime ();
+	private void initCDS () {
+		getStyleClass ().add ("CalendarDayScroller");
+		setPrefHeight (551);
+		setHbarPolicy (ScrollPane.ScrollBarPolicy.NEVER);
+		setVbarPolicy (ScrollPane.ScrollBarPolicy.AS_NEEDED);
 		
-		weekScrollPane.hvalueProperty ().bindBidirectional (timeScrollPane.hvalueProperty ());
-		weekScrollPane.maxWidthProperty ().bind (timeScrollPane.maxWidthProperty ());
-		weekScrollPane.minWidthProperty ().bind (timeScrollPane.minWidthProperty ());
+		dayVBox = new VBox ();
+		dayVBox.setId ("dayScroller");
 		
-		hourScrollPane.vvalueProperty ().bindBidirectional (timeScrollPane.vvalueProperty ());
-		hourScrollPane.maxHeightProperty ().bind (timeScrollPane.maxHeightProperty ());
-		hourScrollPane.minHeightProperty ().bind (timeScrollPane.minHeightProperty ());
-		
-		setTop (weekScrollPane);
-		setLeft (hourScrollPane);
-		setCenter (timeScrollPane);
-	}
-	
-	private void initWeek () {
-		weekScrollPane = new ScrollPane ();
-		weekScrollPane.getStyleClass ().add ("CalendarWeekScroller");
-		weekScrollPane.getStyleClass ().add ("CalendarWeekDays");
-		
-		dayHbox = new HBox ();
-		
-		dayLabels = new Label[cm.getCalendar ().getWeekdays ().length+1];
-		dayLabels[0] = new Label ();
-		dayLabels[0].setId ("CalendarWeekLabel");
-		dayHbox.getChildren ().add (dayLabels[0]);
-		
-		for (int i = 1; i < dayLabels.length; i++) {
-			dayLabels[i] = new Label (cm.getCalendar ().getWeekdays ()[i-1].getHeader ());
-			dayLabels[i].setId ("CalendarWeekLabel");
-			dayHbox.getChildren ().add (dayLabels[i]);
-		}
-		
-		weekScrollPane.setContent (dayHbox);
-	}
-	
-	private void initHours () {
-		hourScrollPane = new ScrollPane ();
-		hourScrollPane.getStyleClass ().add ("CalendarWeekScroller");
-		hourScrollPane.getStyleClass ().add ("CalendarWeekHours");
-		
-		hourVbox = new VBox ();
+		hboxArr = new HBox[24];
+		for (int i = 0; i < hboxArr.length; i++)
+			hboxArr[i] = new HBox ();
 		
 		hourLabels = new Label[24];
-		for (int i = 0; i < 24; i++) {
+		for (int i = 0; i < hourLabels.length; i++) {
 			if (i < 10)
 				hourLabels[i] = new Label ("0" + i + ":00");
 			else
 				hourLabels[i] = new Label ("" + i + ":00");
 			
-			hourLabels[i].setId ("CalendarWeekLabel");
-			hourVbox.getChildren ().add (hourLabels[i]);
+			hourLabels[i].setMinWidth (125);
+			hourLabels[i].setMaxWidth (Double.MAX_VALUE);
+			hourLabels[i].setMaxHeight (Double.MAX_VALUE);
+			hourLabels[i].setId ("hourLabels");
 		}
 		
-		hourScrollPane.setContent (hourVbox);
-	}
-	
-	private void initTime () {
-		timeScrollPane = new ScrollPane ();
-		timeScrollPane.getStyleClass ().add ("CalendarWeekScroller");
-		timeScrollPane.getStyleClass ().add ("CalendarWeekTime");
+		vboxArr = new VBox[24];
+		for (int i = 0; i < vboxArr.length; i++) {
+			vboxArr[i] = new VBox ();
+			HBox.setHgrow (vboxArr[i], Priority.ALWAYS);
+		}
 		
-		timeHbox = new HBox ();
-			timeVbox = new VBox[7];
-			timeLabels = new Label[7][48];
+		timeLabels = new Label[48];
+		for (int i = 0; i < timeLabels.length; i++) {
+			timeLabels[i] = new Label ();
+			timeLabels[i].setPrefHeight (80);
+			timeLabels[i].setMinWidth (750);
+			timeLabels[i].setMaxWidth (Double.MAX_VALUE);
+			timeLabels[i].setMaxHeight (Double.MAX_VALUE);
+			timeLabels[i].setAlignment (Pos.TOP_LEFT);
+		}
+		
+		int ctr = 0;
+		for (int i = 0; i < hboxArr.length; i++) {
+			hboxArr[i].getChildren ().addAll (hourLabels[i], vboxArr[i]);
 			
-			for (int i = 0; i < timeLabels.length; i++) {
-				timeVbox[i] = new VBox ();
-				for (int j = 0; j < timeLabels[i].length; j++) {
-					timeLabels[i][j] = new Label ();
-					timeLabels[i][j].setId ("CalendarWeekTimeLabel");
-					timeVbox[i].getChildren ().add (timeLabels[i][j]);
-				}
-				timeHbox.getChildren ().add (timeVbox[i]);
+			for (int j = 0; j < 2; j++) {
+				vboxArr[i].getChildren ().add (timeLabels[ctr]);
+				ctr ++;
 			}
 			
-		timeScrollPane.setContent (timeHbox);
+			dayVBox.getChildren ().add (hboxArr[i]);
+		}
+		
+		setContent (dayVBox);
+		
+		ids = new int[48];
 	}
 	
 	private void appointmentHandler (MouseEvent e, int i, String name) {
@@ -221,6 +195,11 @@ public class CalendarWeekScroller extends BorderPane implements View {
 	public void update () {
 		
 	}
+	
+	
+	
+	
+	
 	
 	
 }
