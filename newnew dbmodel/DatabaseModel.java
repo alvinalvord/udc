@@ -102,4 +102,14 @@ public class DatabaseModel extends Model {
 			stmt.executeUpdate ("update `appointments` set `date` = '" + date +"' `start_time` = '" + start_time + "' `end_time` = '" + end_time + "' where `id` = '" + id + "';");
 		} catch (Exception e) { e.printStackTrace (); }
 	}
+	
+	public void checkUpdates () {
+        try {
+            rs = stmt.executeQuery ("select timestampdiff(second, (select update_time from information_schema.tables where table_schema = 'clinic' and table_name = 'appointments'), now ());");
+            if (rs.next ()) {
+                if (rs.getInt (1) <= 10)
+                    notifyViews ();
+            }
+        } catch (Exception e) { e.printStackTrace (); }
+    }
 }
