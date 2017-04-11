@@ -164,14 +164,14 @@ public class CreateBox extends VBox implements View{
 				
 				createFrom = new ComboBox<String>();
 				createFrom.setMinWidth(Screen.getPrimary ().getBounds ().getWidth () / 11.78);
-				createFrom.setId("ComboBox");
+				createFrom.getStyleClass().add("ComboBox");
 				
 				createToLabel = new Label ("to");
 				createToLabel.setId ("DefaultLabel");
 				
 				createTo = new ComboBox<String>();
 				createTo.setMinWidth(Screen.getPrimary ().getBounds ().getWidth () / 11.78);
-				createTo.setId("ComboBox");
+				createTo.getStyleClass().add("ComboBox");
 				
 			createTimeHBox.getChildren ().addAll (timeLabel, createFrom, createToLabel, createTo);
 			

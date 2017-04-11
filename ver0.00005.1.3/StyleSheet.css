@@ -259,16 +259,29 @@
 		-fx-effect: dropshadow(three-pass-box, #9E9E9E, 3, 0, 0, 2);
 	}
 
-	#ComboBox {
+	.ComboBox {
 		-fx-font-size: 20px;
 		-fx-font-family: Arial;
 		-fx-font-weight: normal;
-		-fx-background-color: #FFFFFF;
-		-fx-border-color: #000000;
+		-fx-background-color: #FDD835;
+		-fx-background-radius: 3px;
+		-fx-border-color: transparent;
 		-fx-border-radius: 2px;
 		-fx-effect: dropshadow(three-pass-box, #9E9E9E, 3, 0, 0, 2);
 	}
-
+	
+	.ComboBox .list-view .list-cell:selected {
+		-fx-background-color: #F9A825;
+	}
+	
+	.ComboBox .list-view .list-cell:hover {
+		-fx-background-color: #FBC02D;
+	}
+	
+	.ComboBox .list-view .list-cell:pressed {
+		-fx-background-color: #F57F17;
+	}
+	
 	.CheckBox {
 		-fx-font-size: 20px;
 		-fx-font-family: Arial;
@@ -408,12 +421,38 @@
 	-fx-padding: 0;
 }
 
-#ViewSelectComboBox {
-	-fx-font-size: 14px;
-		-fx-font-family: Arial;
-		-fx-font-weight: normal;
-		-fx-background-color: #FFFFFF;
-		-fx-border-color: #000000;
-		-fx-border-radius: 2px;
-		-fx-effect: dropshadow(three-pass-box, #9E9E9E, 3, 0, 0, 2);
+.ViewSelectComboBox {
+	-fx-font-size: 18px;
+	-fx-font-family: Arial;
+	-fx-font-weight: bold;
+	-fx-background-color: #EF5350;
+	-fx-background-radius: 3px;
+	-fx-border-color: transparent;
+	-fx-border-radius: 2px;
+	-fx-effect: dropshadow(three-pass-box, #9E9E9E, 3, 0, 0, 2);
+}
+
+.ViewSelectComboBox .list-view:focused {
+	-fx-text-fill: #FFFFFF;
+}
+
+.ViewSelectComboBox:hover {
+	-fx-background-color: #EF9A9A;
+}
+
+.ViewSelectComboBox:pressed {
+	-fx-background-color: #FF8A80;
+	-fx-effect: dropshadow(three-pass-box, transparent, 3, 0, 0, 2);
+}
+
+.ViewSelectComboBox .list-view .list-cell{
+	-fx-background-color: #EF9A9A;
+}
+
+.ViewSelectComboBox .list-view .list-cell:selected {
+	-fx-background-color: #B71C1C;
+}
+
+.ViewSelectComboBox .list-view .list-cell:hover {
+	-fx-background-color: #C62828;
 }

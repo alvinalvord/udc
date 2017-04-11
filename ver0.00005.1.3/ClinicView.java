@@ -161,7 +161,7 @@ public abstract class ClinicView extends BorderPane implements View {
 			weekAndDayHbox.setAlignment (Pos.CENTER_RIGHT);
 			
 				viewSelect = new ComboBox <String> ();
-				viewSelect.setId ("ViewSelectComboBox");
+				viewSelect.getStyleClass().add ("ViewSelectComboBox");
 				
 				for (String str: cvc.getViewableSchedules ())
 					viewSelect.getItems ().add (str);
