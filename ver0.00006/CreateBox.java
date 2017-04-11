@@ -235,11 +235,19 @@ public class CreateBox extends VBox implements View{
 		});
 		
 		save.setOnAction(e -> {
+			if (recurring.isSelected()) {
+				//dc.createI
+			}
 			
+			if (!recurring.isSelected()) {
+				int n = dc.createInsert(createName.getText (), calendar.getCurrentYear() + "-" + (calendar.getCurrentMonth().getMonth() + 1) + "-" + 
+										calendar.getSelectedDate(), createFrom.getValue(), createTo.getValue(), Integer.toString(dc.getUserId()));
+			}
 		});
 		
 		discard.setOnAction(e -> {
-			
+			initCreateBox ();
+			update ();
 		});
 	}
 }
