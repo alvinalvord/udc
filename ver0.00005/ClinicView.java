@@ -148,8 +148,6 @@ public abstract class ClinicView extends BorderPane implements View {
 		agendaWeekScroller = new AgendaWeekScroller (cvc, gcm);
 		createBox = new CreateBox (cvc, gcm);
 		
-		agendaDayScroller.setViewingId (cvc.selectUserSchedule (viewSelect.getValue ()));
-		
 		rightPane.setTop (rightPaneUpperHBox);
 		rightPane.setCenter (calendarDayScroller);
 	}
@@ -264,7 +262,6 @@ public abstract class ClinicView extends BorderPane implements View {
 		});
 		
 		viewSelect.setOnAction (e -> {
-			agendaDayScroller.setViewingId (cvc.selectUserSchedule (viewSelect.getValue ()));
 			update ();
 		});
 		
