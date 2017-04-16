@@ -1,0 +1,71 @@
+.AgendaDayScroller {
+	-fx-padding: 0px;
+	-fx-alignment: center;
+	-fx-background-color: transparent;
+}
+
+.AgendaDayScroller > .viewport {
+	-fx-background-color: transparent;
+}
+
+.AgendaDayScroller > .scroll-bar,
+.AgendaDayScroller > .scroll-bar:vertical,
+.AgendaDayScroller > .scroll-bar:horizontal,
+.AgendaDayScroller > .scroll-bar:vertical .track,
+.AgendaDayScroller > .scroll-bar:horizontal .track {
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+	-fx-background-radius: 0px;
+	-fx-border-radius: 0px;
+}
+
+.AgendaDayScroller > .scroll-bar:vertical .thumb,
+.AgendaDayScroller > .scroll-bar:horizontal .thumb {
+	-fx-background-color: #AA00FF;
+	-fx-background-radius: 20px;
+}
+
+.AgendaDayScroller > .scroll-bar:vertical .decrement-button,
+.AgendaDayScroller > .scroll-bar:vertical .increment-button {
+	-fx-background-color: transparent;
+	-fx-background-radius: 0px;
+	-fx-padding: 0 20 0 0;
+}
+
+.AgendaDayScroller > .scroll-bar:horizontal .decrement-button,
+.AgendaDayScroller > .scroll-bar:horizontal .increment-button {
+	-fx-background-color: transparent;
+	-fx-background-radius: 0px;
+	-fx-padding: 20 0 0 0;
+}
+
+.AgendaDayScroller > .scroll-bar .decrement-arrow,
+.AgendaDayScroller > .scroll-bar .increment-arrow {
+	-fx-shape: " ";
+	-fx-padding: 0;
+}
+
+.AgendaDayScroller > .corner {
+	-fx-background-color: transparent;
+}
+
+#DoctorLabel {
+	-fx-font-size: 20px;
+	-fx-font-family: Arial;
+	-fx-font-weight: bold;
+	-fx-text-fill: #0000FF;
+}
+
+#SecretaryLabel {
+	-fx-font-size: 20px;
+	-fx-font-family: Arial;
+	-fx-font-weight: bold;
+	-fx-text-fill: #00FF00;
+}
+
+#ClientLabel {
+	-fx-font-size: 20px;
+	-fx-font-family: Arial;
+	-fx-font-weight: bold;
+	-fx-text-fill: #FF0000;
+}
