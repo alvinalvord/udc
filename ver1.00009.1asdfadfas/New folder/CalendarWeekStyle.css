@@ -77,13 +77,13 @@
 	-fx-border-color: black;
 	-fx-border: 1px;
 	
-	-fx-max-width: 150px;
-	-fx-min-width: 150px;
+	-fx-max-width: 200px;
+	-fx-min-width: 200px;
 	-fx-max-height: 120px;
 	-fx-min-height: 120px;
 }
 
-#CalendarWeekTimeLabel {
+.CalendarWeekTimeLabel {
 	-fx-font-size: 30px;
 	-fx-font-weight: bold;
 	-fx-font-family: Arial;
@@ -93,98 +93,28 @@
 	-fx-background-color: white;
 	-fx-border-color: black;
 	-fx-border: 1px;
+	-fx-text-fill: #000000;
 	
-	-fx-max-width: 150px;
-	-fx-min-width: 150px;
+	-fx-max-width: 200px;
+	-fx-min-width: 200px;
 	-fx-max-height: 60px;
 	-fx-min-height: 60px;
 }
 
-#CalendarWeekTimeLabelDoctor {
-	-fx-font-size: 30px;
-	-fx-font-weight: bold;
-	-fx-font-family: Arial;
-
-	-fx-padding: 5px;
-	
+.TimeLabelsDoctor {
 	-fx-background-color: #0000FF;
-	-fx-border-color: black;
-	-fx-border: 1px;
-	
-	-fx-max-width: 150px;
-	-fx-min-width: 150px;
-	-fx-max-height: 60px;
-	-fx-min-height: 60px;
+	-fx-border-color: transparent;
 }
 
-#CalendarWeekTimeLabelClient {
-	-fx-font-size: 30px;
-	-fx-font-weight: bold;
-	-fx-font-family: Arial;
-
-	-fx-padding: 5px;
-	
+.TimeLabelsClient {
 	-fx-background-color: #FF0000;
-	-fx-border-color: black;
-	-fx-border: 1px;
-	
-	-fx-max-width: 150px;
-	-fx-min-width: 150px;
-	-fx-max-height: 60px;
-	-fx-min-height: 60px;
+	-fx-border-color: transparent;
 }
 
-#CalendarWeekTimeLabelSecretary {
-	-fx-font-size: 30px;
-	-fx-font-weight: bold;
-	-fx-font-family: Arial;
-
-	-fx-padding: 5px;
-	
+.TimeLabelsSecretary {
 	-fx-background-color: #00FF00;
-	-fx-border-color: black;
-	-fx-border: 1px;
-	
-	-fx-max-width: 150px;
-	-fx-min-width: 150px;
-	-fx-max-height: 60px;
-	-fx-min-height: 60px;
+	-fx-border-color: transparent;
 }
-
-#CalendarWeekTimeLabelDone {
-	-fx-font-size: 30px;
-	-fx-font-weight: bold;
-	-fx-font-family: Arial;
-
-	-fx-padding: 5px;
-	
-	-fx-background-color: #DDDD10;
-	-fx-border-color: black;
-	-fx-border: 1px;
-	
-	-fx-max-width: 150px;
-	-fx-min-width: 150px;
-	-fx-max-height: 60px;
-	-fx-min-height: 60px;
-}
-
-#CalendarWeekTimeLabelActive {
-	-fx-font-size: 30px;
-	-fx-font-weight: bold;
-	-fx-font-family: Arial;
-
-	-fx-padding: 5px;
-	
-	-fx-background-color: #8000FF;
-	-fx-border-color: black;
-	-fx-border: 1px;
-	
-	-fx-max-width: 150px;
-	-fx-min-width: 150px;
-	-fx-max-height: 60px;
-	-fx-min-height: 60px;
-}
-
 
 #CalendarWeekScrollerBorderPane {
 	-fx-padding: 5px, 0px, 0px, 0px;

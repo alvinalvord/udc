@@ -69,10 +69,3 @@
 	-fx-font-weight: bold;
 	-fx-text-fill: #FF0000;
 }
-
-#AgendaDoneLabel {
-	-fx-font-size: 20px;
-	-fx-font-family: Arial;
-	-fx-font-weight: bold;
-	-fx-text-fill: #DDDD10;
-}
