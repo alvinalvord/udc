@@ -1,0 +1,117 @@
+.CalendarWeekScroller {
+	-fx-padding: 0px;
+	-fx-background-color: transparent;
+	-fx-pannable: true;
+}
+
+.CalendarWeekDays {
+	-fx-alignment: right;
+	-fx-hbar-policy: never;
+	-fx-vbar-policy: never;
+}
+
+.CalendarWeekHours {
+	-fx-alignment: bottom-left;
+	-fx-hbar-policy: never;
+	-fx-vbar-policy: never;
+}
+
+.CalendarWeekTime {
+	-fx-alignment: center;
+	-fx-hbar-policy: never;
+	-fx-vbar-policy: never;
+}
+
+.CalendarWeekScroller > .viewport {
+	-fx-background-color: transparent;
+}
+
+.CalendarWeekScroller > .scroll-bar,
+.CalendarWeekScroller > .scroll-bar:vertical,
+.CalendarWeekScroller > .scroll-bar:horizontal,
+.CalendarWeekScroller > .scroll-bar:vertical .track,
+.CalendarWeekScroller > .scroll-bar:horizontal .track {
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+	-fx-background-radius: 0px;
+	-fx-border-radius: 0px;
+}
+
+.CalendarWeekScroller > .scroll-bar:vertical .thumb,
+.CalendarWeekScroller > .scroll-bar:horizontal .thumb {
+	-fx-background-color: #AA00FF;
+	-fx-background-radius: 20px;
+}
+
+.CalendarWeekScroller > .scroll-bar:vertical .decrement-button,
+.CalendarWeekScroller > .scroll-bar:vertical .increment-button {
+	-fx-background-color: transparent;
+	-fx-background-radius: 0px;
+	-fx-padding: 0 20 0 0;
+}
+
+.CalendarWeekScroller > .scroll-bar:horizontal .decrement-button,
+.CalendarWeekScroller > .scroll-bar:horizontal .increment-button {
+	-fx-background-color: transparent;
+	-fx-background-radius: 0px;
+	-fx-padding: 20 0 0 0;
+}
+
+.CalendarWeekScroller > .scroll-bar .decrement-arrow,
+.CalendarWeekScroller > .scroll-bar .increment-arrow {
+	-fx-shape: " ";
+	-fx-padding: 0;
+}
+
+.CalendarWeekScroller > .corner {
+	-fx-background-color: transparent;
+}
+
+#CalendarWeekLabel {
+	-fx-font-size: 30px;
+	-fx-font-weight: bold;
+	-fx-font-family: Arial;
+	
+	-fx-alignment: center;
+	
+	-fx-border-color: black;
+	-fx-border: 1px;
+	
+	-fx-max-width: 200px;
+	-fx-min-width: 200px;
+	-fx-max-height: 120px;
+	-fx-min-height: 120px;
+}
+
+.CalendarWeekTimeLabel {
+	-fx-font-size: 30px;
+	-fx-font-weight: bold;
+	-fx-font-family: Arial;
+
+	-fx-padding: 5px;
+	
+	-fx-background-color: white;
+	-fx-border-color: black;
+	-fx-border: 1px;
+	-fx-text-fill: #000000;
+	
+	-fx-max-width: 200px;
+	-fx-min-width: 200px;
+	-fx-max-height: 60px;
+	-fx-min-height: 60px;
+}
+
+.calendarFree {
+	-fx-background-color: #00ff00;
+}
+
+.calendarTaken {
+	-fx-background-color: #ff0000;
+}
+
+#CalendarWeekScrollerBorderPane {
+	-fx-padding: 5px, 0px, 0px, 0px;
+}
+
+
+
