@@ -182,6 +182,16 @@ public class CalendarWeekScroller extends BorderPane implements View {
 							timeLabels[i][x].setText (rs.getString ("name"));
 						
 						ids[i][x] = rs.getInt ("id");
+						
+						try {
+							final int var_id = ids[i][x];
+							final String var_name = rs.getString ("name");
+							final String var_date = rs.getString("date");
+							timeLabels[i][x].setOnMouseClicked (event -> {
+								dbc.appointmentHandler (var_id, var_name, var_date);
+							});
+						} catch (Exception paramore) { paramore.printStackTrace (); }
+						
 						appointers[x] = rs.getInt ("appointer_id");
 					}
 				}
